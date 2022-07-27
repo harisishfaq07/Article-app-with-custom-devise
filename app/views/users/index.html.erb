@@ -1,0 +1,21 @@
+<h1> List of Our Precious Users </h1>
+<%= link_to "Homepage" , root_path %>
+
+<table>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Email</th>
+<th>Total Number of Articles</th>
+</tr>
+<% @users.each do |u|%>
+<tr>
+<td><%= u.id%></td>
+<td><%= u.username%></td> 
+<td><%= u.email %></td> 
+<td><%= link_to u.articles.count , article_path(u) %> </td>
+
+
+</tr>
+<% end %>
+</table>

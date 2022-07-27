@@ -1,0 +1,14 @@
+<h1>Update Article</h1>
+
+
+<%= form_for @article do |a|%>
+<p>
+<%= a.label :Edit_Name%>
+<%= a.text_field :name%>
+</p>
+<p>
+<%= a.label :Edit_Description%>
+<%= a.text_area :description %>
+</p>
+<%= a.submit "Update Article"%>
+<% end %>

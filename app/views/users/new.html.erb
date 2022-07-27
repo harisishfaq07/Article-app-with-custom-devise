@@ -1,0 +1,20 @@
+<h1> Please Signup here </h1>
+
+<%= form_for @user do |u| %>
+<p>
+<%= u.label :Enter_Username%>
+<%= u.text_field :username%>
+</p>
+<p>
+<%= u.label :Enter_Email%>
+<%= u.email_field :email%>
+</p>
+<p>
+<%= u.label :Enter_Password%>
+<%= u.password_field :password_digest %>
+</p>
+<p>
+<%= u.submit "Signup"%>
+</p><br/>
+<%= link_to 'Homepage' , root_path%>
+<%end%>

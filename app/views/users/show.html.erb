@@ -1,0 +1,34 @@
+<%= gravatar_for @user, size: 150 %>
+<br>
+<h1> Welcome Mr <%= @user.username %> 
+<br>
+
+<%= link_to "Create New Articles" , new_article_path %> | <%= link_to 'Update your Profile' %> | <%= link_to "View all Articles" , articles_path  %>
+
+
+<h3>Articles by this User</h3>
+
+<table>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+<th>Show</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+
+<% @user.articles.each do |a|%>
+<tr>
+<th><%= a.name %></th>
+<th><%= a.description %></th>
+<th><%= link_to "show" , article_path(a.id) %></th>
+<th><%= link_to "Edit" , edit_article_path(a) %></th>
+<td><%= link_to "Delete" ,article_path(a), method: :delete, data: { 
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></td> 
+
+</tr>
+<%end%>
+
+</table>

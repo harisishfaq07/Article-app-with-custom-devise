@@ -1,0 +1,11 @@
+<h1>Articles Showing Page</h1>
+
+
+Name: <%= @article.name %> <br/>
+Description: <%= @article.description %><br/><br/>
+<small>Created By: <%= @article.user.username %></small><br>
+<small>Created at: <%= @article.created_at %></small><br>
+
+<%= link_to "Back" , articles_path%> | <%= link_to "Edit" , edit_article_path(@article)%>
+
+
