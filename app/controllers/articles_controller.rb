@@ -2,7 +2,9 @@ class ArticlesController < ApplicationController
 
     def index
         # @user = user
-        @articles = Article.all
+        # @articles = Article.all
+        @articles = Article.paginate(page: params[:page], per_page: 5)
+        # @articles = Article.paginate(:page => params[:page], :per_page => 2)
     end
    
     def new

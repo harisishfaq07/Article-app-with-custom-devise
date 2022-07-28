@@ -2,7 +2,8 @@
 <br>
 <h1> Welcome Mr <%= @user.username %> 
 <br>
-
+Id: <%= session[:user_id] %> <br>
+Username <%= session[:username] %><br>
 <%= link_to "Create New Articles" , new_article_path %> | <%= link_to 'Update your Profile' %> | <%= link_to "View all Articles" , articles_path  %>
 
 
@@ -32,3 +33,5 @@
 <%end%>
 
 </table>
+
+<%# <%= will_paginate  @users_articles %> %>

@@ -16,6 +16,11 @@
     <%= msg %>
   </div>
 <% end %>
+<% if logged_in? %>
+<%= link_to "Logout" , logout_path ,method: :delete %> 
+<% else %>
+<%= link_to"login" %>
+ <%end%>
     <%= yield %>
   </body>
 </html>
