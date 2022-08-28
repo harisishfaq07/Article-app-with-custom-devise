@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 before_action :set_user, only: [:show]
+before_action :required , except: [:index , :new , :create]
 def new
 @user = User.new
 end

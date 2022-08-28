@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
 
+
+    before_action :required , only: [:edit , :new , :update , :create]
+
     def index
         # @user = user
         # @articles = Article.all
@@ -12,7 +15,7 @@ class ArticlesController < ApplicationController
     end
 def create
     @article = Article.new(article_params)
-    @article.user_id = User.first.id
+    @article.user_id = current_user.id
     # debugger
     if @article.save
         flash.alert = "Article successfully created"

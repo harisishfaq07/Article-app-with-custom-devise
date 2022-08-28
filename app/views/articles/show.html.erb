@@ -6,6 +6,6 @@ Description: <%= @article.description %><br/><br/>
 <small>Created By: <%= @article.user.username %></small><br>
 <small>Created at: <%= @article.created_at %></small><br>
 
-<%= link_to "Back" , articles_path%> | <%= link_to "Edit" , edit_article_path(@article)%>
+<%= link_to "Back" , :back %> <% if logged_in? && current_user.id == @article.user_id %> | <%= link_to "Edit" , edit_article_path(@article)%> <%end%>
 
 

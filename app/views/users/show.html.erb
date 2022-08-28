@@ -4,7 +4,7 @@
 <br>
 Id: <%= session[:user_id] %> <br>
 Username <%= session[:username] %><br>
-<%= link_to "Create New Articles" , new_article_path %> | <%= link_to 'Update your Profile' %> | <%= link_to "View all Articles" , articles_path  %>
+<%= link_to "Create New Articles" , new_article_path %> | <%= link_to 'Update your Profile' %>  <% if current_user.admin? %>  | <%= link_to "Create Category" , new_category_path%> <%end%>
 
 
 <h3>Articles by this User</h3>
@@ -34,4 +34,13 @@ Username <%= session[:username] %><br>
 
 </table>
 
-<%# <%= will_paginate  @users_articles %> %>
+<% if current_user.admin?%>
+<h1>Total number of Users: </h1> <%= User.count %>
+<br><h4>Users Name List</h4>
+<ul>
+
+<% User.all.each do |u| %>
+<li><%= u.username%></li>
+<%end%>
+</ul>
+<%end%>

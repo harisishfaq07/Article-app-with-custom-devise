@@ -1,0 +1,11 @@
+<h1>Create new category</h1>
+
+<%= form_for @category do |c|%>
+
+<%= c.label :Category_Name%>
+<%= c.text_field :name%>
+<%= c.submit "Create"%>
+
+<%end%>
+
+<%= link_to "Back" , :back %>

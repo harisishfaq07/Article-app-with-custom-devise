@@ -10,6 +10,15 @@
 <%= a.label :Description%>
 <%= a.text_area :description %>
 </p>
+<% Category.all.each do |c|%>
+<%= c.name%>
+<%end%>
+
 <%= a.submit "Create Article"%>
 <% end %>
+
+<%= link_to "back" , :back%>
+
+
+
 
